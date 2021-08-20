@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "https://shouts77.github.io/reactD3/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "https://shouts77.github.io/reactD3/static/js/main.6753ef2d.chunk.js",
-    "main.js.map": "https://shouts77.github.io/reactD3/static/js/main.6753ef2d.chunk.js.map",
-    "runtime-main.js": "https://shouts77.github.io/reactD3/static/js/runtime-main.610f6e1f.js",
-    "runtime-main.js.map": "https://shouts77.github.io/reactD3/static/js/runtime-main.610f6e1f.js.map",
-    "static/js/2.7231bd9d.chunk.js": "https://shouts77.github.io/reactD3/static/js/2.7231bd9d.chunk.js",
-    "static/js/2.7231bd9d.chunk.js.map": "https://shouts77.github.io/reactD3/static/js/2.7231bd9d.chunk.js.map",
-    "static/js/3.e390a509.chunk.js": "https://shouts77.github.io/reactD3/static/js/3.e390a509.chunk.js",
-    "static/js/3.e390a509.chunk.js.map": "https://shouts77.github.io/reactD3/static/js/3.e390a509.chunk.js.map",
+    "main.css": "https://shouts77.github.io/reactD3/static/css/main.6dea0f05.chunk.css",
+    "main.js": "https://shouts77.github.io/reactD3/static/js/main.683407d0.chunk.js",
+    "main.js.map": "https://shouts77.github.io/reactD3/static/js/main.683407d0.chunk.js.map",
+    "runtime-main.js": "https://shouts77.github.io/reactD3/static/js/runtime-main.b6e369db.js",
+    "runtime-main.js.map": "https://shouts77.github.io/reactD3/static/js/runtime-main.b6e369db.js.map",
+    "static/js/2.8174fa18.chunk.js": "https://shouts77.github.io/reactD3/static/js/2.8174fa18.chunk.js",
+    "static/js/2.8174fa18.chunk.js.map": "https://shouts77.github.io/reactD3/static/js/2.8174fa18.chunk.js.map",
+    "static/js/3.246fbc00.chunk.js": "https://shouts77.github.io/reactD3/static/js/3.246fbc00.chunk.js",
+    "static/js/3.246fbc00.chunk.js.map": "https://shouts77.github.io/reactD3/static/js/3.246fbc00.chunk.js.map",
     "index.html": "https://shouts77.github.io/reactD3/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "https://shouts77.github.io/reactD3/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.7231bd9d.chunk.js.LICENSE.txt": "https://shouts77.github.io/reactD3/static/js/2.7231bd9d.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "https://shouts77.github.io/reactD3/static/media/logo.6ce24c58.svg"
+    "static/css/main.6dea0f05.chunk.css.map": "https://shouts77.github.io/reactD3/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.8174fa18.chunk.js.LICENSE.txt": "https://shouts77.github.io/reactD3/static/js/2.8174fa18.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.610f6e1f.js",
-    "static/js/2.7231bd9d.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.6753ef2d.chunk.js"
+    "static/js/runtime-main.b6e369db.js",
+    "static/js/2.8174fa18.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.683407d0.chunk.js"
   ]
 }
