@@ -21,6 +21,8 @@ import ExpandLess from '@material-ui/icons/ExpandLess'; // for nested list
 import ExpandMore from '@material-ui/icons/ExpandMore'; // for nested list
 import Equalizer from '@material-ui/icons/Equalizer'; // for nested list
 
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 
 const drawerWidth = 240;
 
@@ -84,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawerLeft() {
+export default function Navigation() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -101,6 +103,10 @@ export default function PersistentDrawerLeft() {
 
   const handleClick = () => {
     setnlOpen(!nlopen);
+  };
+
+  const listClick = () => {
+    setOpen(false);
   };
 
   return (
@@ -143,11 +149,13 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          <ListItem button>
+          <ListItem button onClick={listClick}>
           <ListItemIcon>
             <Home />
           </ListItemIcon>
+          <Link to="/" component={RouterLink}>
           <ListItemText primary="Home" />
+          </Link>
         </ListItem>
         <ListItem button onClick={handleClick}>
           <ListItemIcon>
@@ -158,11 +166,13 @@ export default function PersistentDrawerLeft() {
         </ListItem>
         <Collapse in={nlopen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.nested}>
+            <ListItem button className={classes.nested} onClick={listClick}>
               <ListItemIcon>
                 <Equalizer />
               </ListItemIcon>
+              <Link to="/barchart" component={RouterLink}>
               <ListItemText primary="Bar Chart" />
+              </Link>
             </ListItem>
           </List>
         </Collapse>
@@ -174,29 +184,6 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-          facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-          gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-          donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-          Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-          imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-          arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-          donec massa sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-          tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-          consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-          vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-          hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-          tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-          nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-          accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
       </main>
     </div>
   );
