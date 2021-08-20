@@ -1,12 +1,10 @@
-import logo from './logo.svg';
-import HelloD3 from './components/HelloD3/HelloD3'
-import './App.css';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <HelloD3 />
+    <div>
+      <header>
+        <Navigation />
       </header>
     </div>
   );
