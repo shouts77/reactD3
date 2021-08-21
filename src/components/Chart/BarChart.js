@@ -1,11 +1,15 @@
 import React from 'react'
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 
 function BarChart() {
   return (
     <div>
-      <header>
-        <p>BarChart component!</p>
-      </header>
+      <Container maxWidth="lg">
+      <Typography paragraph>
+          Bar Chart
+       </Typography>
+       </Container>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -88,7 +88,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navigation() {
   const classes = useStyles();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [nlopen, setnlOpen] = React.useState(false);
 
@@ -153,7 +152,7 @@ export default function Navigation() {
           <ListItemIcon>
             <Home />
           </ListItemIcon>
-          <Link to="/" component={RouterLink}>
+          <Link to="/reactD3" component={RouterLink}>
           <ListItemText primary="Home" />
           </Link>
         </ListItem>

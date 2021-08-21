@@ -5,6 +5,8 @@
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "@observablehq/runtime": "4",
+    "@shouts77/random-dots": "https://api.observablehq.com/@shouts77/random-dots.tgz?v=3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
