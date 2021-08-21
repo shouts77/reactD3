@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://shouts77.github.io/reactD3/static/css/main.4c0f5fd3.chunk.css",
-    "main.js": "https://shouts77.github.io/reactD3/static/js/main.7d06f6ea.chunk.js",
-    "main.js.map": "https://shouts77.github.io/reactD3/static/js/main.7d06f6ea.chunk.js.map",
+    "main.js": "https://shouts77.github.io/reactD3/static/js/main.936a05a6.chunk.js",
+    "main.js.map": "https://shouts77.github.io/reactD3/static/js/main.936a05a6.chunk.js.map",
     "runtime-main.js": "https://shouts77.github.io/reactD3/static/js/runtime-main.e11f0589.js",
     "runtime-main.js.map": "https://shouts77.github.io/reactD3/static/js/runtime-main.e11f0589.js.map",
     "static/js/2.b0d43f93.chunk.js": "https://shouts77.github.io/reactD3/static/js/2.b0d43f93.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e11f0589.js",
     "static/js/2.b0d43f93.chunk.js",
     "static/css/main.4c0f5fd3.chunk.css",
-    "static/js/main.7d06f6ea.chunk.js"
+    "static/js/main.936a05a6.chunk.js"
   ]
 }
