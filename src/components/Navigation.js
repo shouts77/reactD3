@@ -169,6 +169,14 @@ export default function Navigation() {
               <ListItemIcon>
                 <Equalizer />
               </ListItemIcon>
+              <Link to="/scatterchart" component={RouterLink}>
+              <ListItemText primary="Scatter Chart" />
+              </Link>
+            </ListItem>
+            <ListItem button className={classes.nested} onClick={listClick}>
+              <ListItemIcon>
+                <Equalizer />
+              </ListItemIcon>
               <Link to="/barchart" component={RouterLink}>
               <ListItemText primary="Bar Chart" />
               </Link>

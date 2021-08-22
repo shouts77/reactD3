@@ -1,31 +1,44 @@
 import React from 'react'
+import * as d3 from "d3";
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
-import RandomDots from './chart/RandomDot';
+import ScatterChartD3 from './ScatterChartD3';
 
-function Home() {
+function ScatterChart() {
+  const [data, setData] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    d3.csv('/reactD3/data/scatter.csv').then((d) => {
+      setData(d);
+      setLoading(false);
+    });
+    return () => undefined;
+  }, []);
+
   return (
     <div>
       <Container maxWidth="lg">
       <div>
       <Typography variant="h4">
-        데이터 시각화 연습을 위한 앱
+        Scatter Chart
       </Typography>
       <br />
       </div>
       <Divider variant="fullWidth" />
       <div style={{ paddingTop: 20, paddingBottom: 20 }}>
       <Typography paragraph>
-         React와 D3.js로 데이터 시각화를 연습하기 위해 만든 앱입니다.
+         D3.js Scatter Chart 연습
        </Typography>
        </div>
        <div>
-         <RandomDots />
+        {loading && <div>loading</div>}
+        {!loading && <ScatterChartD3 data={data} />}
        </div>
        </Container>
     </div>
   );
 }
 
-export default Home;
+export default ScatterChart;

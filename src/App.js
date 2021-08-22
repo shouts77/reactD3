@@ -4,7 +4,8 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
-import BarChart from './components/Chart/BarChart';
+import ScatterChart from './components/chart/ScatterChart/ScatterChart';
+import BarChart from './components/chart/BarChart/BarChart';
 
 const font = "'Noto Sans KR', sans-serif";
 const theme = createTheme({
@@ -22,7 +23,8 @@ function App() {
     <Router>
         <Navigation />
         <Route exact path="/reactD3" component={Home}/>
-        <Route exact path="/barchart" component={BarChart}/>
+        <Route path="/scatterchart" component={ScatterChart}/>
+        <Route path="/barchart" component={BarChart}/>
     </Router>
     </ThemeProvider>
   );
