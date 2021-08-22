@@ -41,7 +41,7 @@ export default function ScatterChartD3({data}) {
             .attr("fill", color)
             .attr("cx", (d) => x(d.x))
             .attr("cy", (d) => y(d.y))
-            .attr("r", 3);
+            .attr("r", 2);
     }
   );
 
