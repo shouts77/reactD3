@@ -13,7 +13,11 @@ function BarChart() {
     d3.dsv(',', '/reactD3/data/alphabet.csv',
         ({letter, frequency}) => (
           {name: letter, value: +frequency})).then((d) => {
-      setData(d.sort((a, b) => d3.descending(a.value, b.value)));
+      setData(
+        Object.assign(
+          d.sort((a, b) => d3.descending(a.value, b.value)
+          ),{format:"%", y:"↑ Frequency"})
+        );
       setLoading(false);
     });
     return () => undefined;

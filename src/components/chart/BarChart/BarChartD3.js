@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
 export default function BarChartD3({data}) {
+  console.log({data})
   const ref = useRef();
 
   useEffect(() => {
@@ -22,19 +23,22 @@ export default function BarChartD3({data}) {
                 .range([height - margin.bottom - adjmargin, margin.top])
 
     const xAxis = g => g.attr("transform", `translate(0,${height - margin.bottom - adjmargin})`)
-                        .call(d3.axisBottom(x)
-                        .tickFormat(i => data[i].name)
-                        .tickSizeOuter(0))
+                        .call(
+                          d3.axisBottom(x)
+                            .tickFormat(i => data[i].name)
+                            .tickSizeOuter(1)
+                          )
 
     const yAxis = g => g.attr("transform", `translate(${margin.left},0)`)
-                        .call(d3.axisLeft(y).ticks(null, "%"))
+                        .call(d3.axisLeft(y).ticks(null, data.format))
                         .call(g => g.select(".domain").remove())
                         .call(g => g.append("text")
                                     .attr("x", -margin.left)
                                     .attr("y", 10)
                                     .attr("fill", "currentColor")
                                     .attr("text-anchor", "start")
-                                    .text(data.y))
+                                    .text(data.y)
+                                        .attr("transform", `translate(0,-5)`))
 
       const svg = d3.select(ref.current)
                     .attr("viewBox", [0, 0, width, height]);
@@ -50,8 +54,8 @@ export default function BarChartD3({data}) {
              .attr("height", d => y(0) - y(d.value))
              .attr("width", x.bandwidth());
 
-      svg.select(".x-axis").append("g").call(xAxis);
-      svg.select(".x-axis").append("g").call(yAxis);
+      svg.select(".x-axis").append("g").call(xAxis).style("font-size", "0.4rem");
+      svg.select(".x-axis").append("g").call(yAxis).style("font-size", "0.4rem");
       
       }
     );

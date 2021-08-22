@@ -21,6 +21,7 @@ export default function ScatterChartD3({data}) {
     svg.select(".x-axis")
        .append("g")
        .attr("transform", `translate(0,${height - margin.bottom - adjmargin})`)
+       .style("font-size", "0.4rem")
        .call(d3.axisBottom(x));
 
     const y = d3.scaleLinear()
@@ -30,6 +31,7 @@ export default function ScatterChartD3({data}) {
     svg.select(".y-axis")
        .append("g")
        .attr("transform", `translate(${margin.left},0)`)
+       .style("font-size", "0.4rem")
        .call(d3.axisLeft(y));
 
     svg.select(".plot-area")
