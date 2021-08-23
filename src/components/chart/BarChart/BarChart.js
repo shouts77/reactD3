@@ -1,5 +1,5 @@
-import React from 'react'
-import * as d3 from "d3";
+import React from 'react';
+import * as d3 from 'd3';
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
@@ -10,14 +10,16 @@ function BarChart() {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    d3.dsv(',', '/reactD3/data/alphabet.csv',
-        ({letter, frequency}) => (
-          {name: letter, value: +frequency})).then((d) => {
+    d3.dsv(',', '/reactD3/data/alphabet.csv', ({ letter, frequency }) => ({
+      name: letter,
+      value: +frequency,
+    })).then((d) => {
       setData(
         Object.assign(
-          d.sort((a, b) => d3.descending(a.value, b.value)
-          ),{format:"%", y:"↑ Frequency"})
-        );
+          d.sort((a, b) => d3.descending(a.value, b.value)),
+          { format: '%', y: '↑ Frequency' },
+        ),
+      );
       setLoading(false);
     });
     return () => undefined;
@@ -25,23 +27,19 @@ function BarChart() {
   return (
     <div>
       <Container maxWidth="lg">
-      <div>
-      <Typography variant="h4">
-        Bar Chart
-      </Typography>
-      <br />
-      </div>
-      <Divider variant="fullWidth" />
-      <div style={{ paddingTop: 20, paddingBottom: 20 }}>
-      <Typography paragraph>
-         D3.js Bar Chart 연습
-       </Typography>
-       </div>
-       <div>
-        {loading && <div>loading</div>}
-        {!loading && <BarChartD3 data={data}/>}
-       </div>
-       </Container>
+        <div>
+          <Typography variant="h4">Bar Chart</Typography>
+          <br />
+        </div>
+        <Divider variant="fullWidth" />
+        <div style={{ paddingTop: 20, paddingBottom: 20 }}>
+          <Typography paragraph>D3.js Bar Chart 연습</Typography>
+        </div>
+        <div>
+          {loading && <div>loading</div>}
+          {!loading && <BarChartD3 data={data} />}
+        </div>
+      </Container>
     </div>
   );
 }

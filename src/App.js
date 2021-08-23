@@ -12,25 +12,22 @@ const theme = createTheme({
   typography: {
     fontFamily: font,
     h4: {
-      "fontWeight": 500,
-    }
-  }
+      fontWeight: 500,
+    },
+  },
 });
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    <Router>
+      <Router>
         <Navigation />
-        <Route exact path="/reactD3" component={Home}/>
-        <Route path="/scatterchart" component={ScatterChart}/>
-        <Route path="/barchart" component={BarChart}/>
-    </Router>
+        <Route exact path="/reactD3" component={Home} />
+        <Route path="/scatterchart" component={ScatterChart} />
+        <Route path="/barchart" component={BarChart} />
+      </Router>
     </ThemeProvider>
   );
 }
 
 export default App;
-
-
-

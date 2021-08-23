@@ -91,7 +91,6 @@ export default function Navigation() {
   const [open, setOpen] = React.useState(false);
   const [nlopen, setnlOpen] = React.useState(false);
 
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -149,40 +148,40 @@ export default function Navigation() {
         <Divider />
         <List>
           <ListItem button onClick={listClick}>
-          <ListItemIcon>
-            <Home />
-          </ListItemIcon>
-          <Link to="/reactD3" component={RouterLink}>
-          <ListItemText primary="Home" />
-          </Link>
-        </ListItem>
-        <ListItem button onClick={handleClick}>
-          <ListItemIcon>
-            <AccountTree />
-          </ListItemIcon>
-          <ListItemText primary="Project" />
-          {nlopen ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse in={nlopen} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <ListItem button className={classes.nested} onClick={listClick}>
-              <ListItemIcon>
-                <Equalizer />
-              </ListItemIcon>
-              <Link to="/scatterchart" component={RouterLink}>
-              <ListItemText primary="Scatter Chart" />
-              </Link>
-            </ListItem>
-            <ListItem button className={classes.nested} onClick={listClick}>
-              <ListItemIcon>
-                <Equalizer />
-              </ListItemIcon>
-              <Link to="/barchart" component={RouterLink}>
-              <ListItemText primary="Bar Chart" />
-              </Link>
-            </ListItem>
-          </List>
-        </Collapse>
+            <ListItemIcon>
+              <Home />
+            </ListItemIcon>
+            <Link to="/reactD3" component={RouterLink}>
+              <ListItemText primary="Home" />
+            </Link>
+          </ListItem>
+          <ListItem button onClick={handleClick}>
+            <ListItemIcon>
+              <AccountTree />
+            </ListItemIcon>
+            <ListItemText primary="Project" />
+            {nlopen ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse in={nlopen} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItem button className={classes.nested} onClick={listClick}>
+                <ListItemIcon>
+                  <Equalizer />
+                </ListItemIcon>
+                <Link to="/scatterchart" component={RouterLink}>
+                  <ListItemText primary="Scatter Chart" />
+                </Link>
+              </ListItem>
+              <ListItem button className={classes.nested} onClick={listClick}>
+                <ListItemIcon>
+                  <Equalizer />
+                </ListItemIcon>
+                <Link to="/barchart" component={RouterLink}>
+                  <ListItemText primary="Bar Chart" />
+                </Link>
+              </ListItem>
+            </List>
+          </Collapse>
         </List>
       </Drawer>
       <main
