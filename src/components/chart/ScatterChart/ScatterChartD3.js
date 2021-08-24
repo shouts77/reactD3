@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 export default function ScatterChartD3({ data }) {
-  console.log({ data });
-
   const ref = useRef();
 
   useEffect(() => {
@@ -14,10 +12,12 @@ export default function ScatterChartD3({ data }) {
       data.map((d) => d.category),
       d3.schemeCategory10,
     );
+
     const shape = d3.scaleOrdinal(
       data.map((d) => d.category),
       d3.symbols.map((s) => d3.symbol().type(s)()),
     );
+
     const margin = { top: 25, right: 20, bottom: 35, left: 40 };
 
     const svg = d3.select(ref.current).attr('viewBox', [0, 0, width, height]);
@@ -107,6 +107,44 @@ export default function ScatterChartD3({ data }) {
     svg.select('.x-axis').append('g').call(xAxis).style('font-size', '0.7rem');
     svg.select('.y-axis').append('g').call(yAxis).style('font-size', '0.7rem');
     svg.select('.grid').append('g').call(grid);
+
+    const keys = ['setosa', 'versicolor', 'virginica'];
+    const legendColor = d3.scaleOrdinal().domain(keys).range(d3.schemeCategory10);
+    const legendSize = 10;
+
+    svg
+      .select('.legend')
+      .append('g')
+      .attr('stroke-width', 1.5)
+      .attr('font-family', 'sans-serif')
+      .attr('font-size', 10)
+      .selectAll('mydots')
+      .data(keys)
+      .join('rect')
+      .attr('x', (d, i) => 75 * i)
+      .attr('y', 105) // 100 is where the first dot appears. 25 is the distance between dots
+      .attr('width', legendSize)
+      .attr('height', legendSize)
+      .attr('transform', (d) => `translate(550, -100)`)
+      .style('fill', (d) => legendColor(d));
+
+    svg
+      .select('.legend')
+      .append('g')
+      .attr('stroke-width', 1.5)
+      .attr('font-family', 'sans-serif')
+      .attr('font-size', 12)
+      .selectAll('mylabels')
+      .data(keys)
+      .enter()
+      .append('text')
+      .attr('x', (d, i) => 75 * i + legendSize * 1.2)
+      .attr('y', 110) // 100 is where the first dot appears. 25 is the distance between dots
+      .style('fill', (d) => legendColor(d))
+      .text((d) => d)
+      .attr('text-anchor', 'left')
+      .attr('transform', (d) => `translate(550, -100)`)
+      .style('alignment-baseline', 'middle');
   });
 
   return (
@@ -119,6 +157,7 @@ export default function ScatterChartD3({ data }) {
           marginLeft: '0px',
         }}
       >
+        <g className="legend" />
         <g className="plot-area" />
         <g className="x-axis" />
         <g className="y-axis" />
