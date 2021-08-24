@@ -110,23 +110,50 @@ export default function ScatterChartD3({ data }) {
 
     const keys = ['setosa', 'versicolor', 'virginica'];
     const legendColor = d3.scaleOrdinal().domain(keys).range(d3.schemeCategory10);
+    const legendShape = d3.scaleOrdinal(
+      keys.map((d) => d),
+      d3.symbols.map((s) => d3.symbol().type(s)()),
+    );
+    console.log(legendShape('virginica'));
+
     const legendSize = 10;
+
+    // svg
+    //   .select('.legend')
+    //   .append('g')
+    //   .attr('stroke-width', 1.5)
+    //   .attr('font-family', 'sans-serif')
+    //   .attr('font-size', 10)
+    //   .selectAll('mydots')
+    //   .data(keys)
+    //   .join('rect')
+    //   .attr('x', (d, i) => 75 * i)
+    //   .attr('y', 105) // 100 is where the first dot appears. 25 is the distance between dots
+    //   .attr('width', legendSize)
+    //   .attr('height', legendSize)
+    //   .attr('transform', (d) => `translate(550, -100)`)
+    //   .style('fill', (d) => legendColor(d));
 
     svg
       .select('.legend')
-      .append('g')
-      .attr('stroke-width', 1.5)
-      .attr('font-family', 'sans-serif')
-      .attr('font-size', 10)
-      .selectAll('mydots')
-      .data(keys)
-      .join('rect')
-      .attr('x', (d, i) => 75 * i)
-      .attr('y', 105) // 100 is where the first dot appears. 25 is the distance between dots
-      .attr('width', legendSize)
-      .attr('height', legendSize)
-      .attr('transform', (d) => `translate(550, -100)`)
-      .style('fill', (d) => legendColor(d));
+      .append('path')
+      .attr('transform', `translate(550, 9)`)
+      .attr('d', legendShape('setosa'))
+      .style('fill', legendColor('setosa'));
+
+    svg
+      .select('.legend')
+      .append('path')
+      .attr('transform', `translate(625, 9)`)
+      .attr('d', legendShape('versicolor'))
+      .style('fill', legendColor('versicolor'));
+
+    svg
+      .select('.legend')
+      .append('path')
+      .attr('transform', `translate(700, 9)`)
+      .attr('d', legendShape('virginica'))
+      .style('fill', legendColor('virginica'));
 
     svg
       .select('.legend')
