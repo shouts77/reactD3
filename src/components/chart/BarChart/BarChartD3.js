@@ -26,7 +26,7 @@ export default function BarChartD3({ data }) {
       .nice()
       .range([height - margin.bottom - adjmargin, margin.top]);
 
-    // xAxis
+    // creating xAxis
     const xAxis = (g) =>
       g.attr('transform', `translate(0,${height - margin.bottom - adjmargin})`).call(
         d3
@@ -35,7 +35,7 @@ export default function BarChartD3({ data }) {
           .tickSizeOuter(1),
       );
 
-    // yAxis
+    // creating yAxis
     const yAxis = (g) =>
       g
         .attr('transform', `translate(${margin.left},0)`)
@@ -52,9 +52,10 @@ export default function BarChartD3({ data }) {
             .attr('transform', `translate(0,-5)`),
         );
 
-    // svg setting
+    // base svg setting
     const svg = d3.select(ref.current).attr('viewBox', [0, 0, width, height]);
 
+    // attaching main chart
     svg
       .select('.plot-area')
       .append('g')
@@ -67,6 +68,7 @@ export default function BarChartD3({ data }) {
       .attr('height', (d) => y(0) - y(d.value))
       .attr('width', x.bandwidth());
 
+    // attaching Axis
     svg.select('.x-axis').append('g').call(xAxis).style('font-size', '0.4rem');
     svg.select('.y-axis').append('g').call(yAxis).style('font-size', '0.4rem');
   });
