@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 export default function BarChartD3({ data }) {
-  console.log({ data });
   const ref = useRef();
 
   useEffect(() => {

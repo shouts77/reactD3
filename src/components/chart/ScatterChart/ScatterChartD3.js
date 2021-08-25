@@ -114,8 +114,6 @@ export default function ScatterChartD3({ data }) {
       keys.map((d) => d),
       d3.symbols.map((s) => d3.symbol().type(s)()),
     );
-    console.log(legendShape('virginica'));
-
     const legendSize = 10;
 
     // svg

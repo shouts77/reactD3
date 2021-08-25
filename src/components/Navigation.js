@@ -89,7 +89,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Navigation() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [nlopen, setnlOpen] = React.useState(false);
+  const [pOpen, setPopen] = React.useState(false);
+  const [rOpen, setRopen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -99,8 +100,12 @@ export default function Navigation() {
     setOpen(false);
   };
 
-  const handleClick = () => {
-    setnlOpen(!nlopen);
+  const projectHandleClick = () => {
+    setPopen(!pOpen);
+  };
+
+  const practiceHandleClick = () => {
+    setRopen(!rOpen);
   };
 
   const listClick = () => {
@@ -155,14 +160,41 @@ export default function Navigation() {
               <ListItemText primary="Home" />
             </Link>
           </ListItem>
-          <ListItem button onClick={handleClick}>
+          <ListItem button onClick={projectHandleClick}>
             <ListItemIcon>
               <AccountTree />
             </ListItemIcon>
             <ListItemText primary="Project" />
-            {nlopen ? <ExpandLess /> : <ExpandMore />}
+            {pOpen ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
-          <Collapse in={nlopen} timeout="auto" unmountOnExit>
+          <Collapse in={pOpen} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItem button className={classes.nested} onClick={listClick}>
+                <ListItemIcon>
+                  <Equalizer />
+                </ListItemIcon>
+                <Link to="/scatterchart" component={RouterLink}>
+                  <ListItemText primary="Scatter Chart" />
+                </Link>
+              </ListItem>
+              <ListItem button className={classes.nested} onClick={listClick}>
+                <ListItemIcon>
+                  <Equalizer />
+                </ListItemIcon>
+                <Link to="/barchart" component={RouterLink}>
+                  <ListItemText primary="Bar Chart" />
+                </Link>
+              </ListItem>
+            </List>
+          </Collapse>
+          <ListItem button onClick={practiceHandleClick}>
+            <ListItemIcon>
+              <AccountTree />
+            </ListItemIcon>
+            <ListItemText primary="Practice" />
+            {rOpen ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse in={rOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem button className={classes.nested} onClick={listClick}>
                 <ListItemIcon>
