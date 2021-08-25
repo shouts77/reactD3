@@ -5,24 +5,28 @@ export default function BarChartD3({ data }) {
   const ref = useRef();
 
   useEffect(() => {
+    //base setting
     const width = 500;
     const height = 500;
     const adjmargin = 200;
     const color = 'steelblue';
     const margin = { top: 10, right: 30, bottom: 30, left: 30 };
 
+    // x value scaling
     const x = d3
       .scaleBand()
       .domain(d3.range(data.length))
       .range([margin.left, width - margin.right])
       .padding(0.1);
 
+    // y value scaling
     const y = d3
       .scaleLinear()
       .domain([0, d3.max(data, (d) => d.value)])
       .nice()
       .range([height - margin.bottom - adjmargin, margin.top]);
 
+    // xAxis
     const xAxis = (g) =>
       g.attr('transform', `translate(0,${height - margin.bottom - adjmargin})`).call(
         d3
@@ -31,6 +35,7 @@ export default function BarChartD3({ data }) {
           .tickSizeOuter(1),
       );
 
+    // yAxis
     const yAxis = (g) =>
       g
         .attr('transform', `translate(${margin.left},0)`)
@@ -47,6 +52,7 @@ export default function BarChartD3({ data }) {
             .attr('transform', `translate(0,-5)`),
         );
 
+    // svg setting
     const svg = d3.select(ref.current).attr('viewBox', [0, 0, width, height]);
 
     svg
@@ -62,7 +68,7 @@ export default function BarChartD3({ data }) {
       .attr('width', x.bandwidth());
 
     svg.select('.x-axis').append('g').call(xAxis).style('font-size', '0.4rem');
-    svg.select('.x-axis').append('g').call(yAxis).style('font-size', '0.4rem');
+    svg.select('.y-axis').append('g').call(yAxis).style('font-size', '0.4rem');
   });
   return (
     <>

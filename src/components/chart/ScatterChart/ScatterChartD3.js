@@ -5,6 +5,7 @@ export default function ScatterChartD3({ data }) {
   const ref = useRef();
 
   useEffect(() => {
+    //base setting
     const width = 800;
     const height = 600;
     const adjmargin = 0;
@@ -20,14 +21,21 @@ export default function ScatterChartD3({ data }) {
 
     const margin = { top: 25, right: 20, bottom: 35, left: 40 };
 
-    const svg = d3.select(ref.current).attr('viewBox', [0, 0, width, height]);
-
+    // x value scaling
     const x = d3
       .scaleLinear()
       .domain(d3.extent(data, (d) => d.x))
       .nice()
       .range([margin.left, width - margin.right - adjmargin]);
 
+    // y value scaling
+    const y = d3
+      .scaleLinear()
+      .domain(d3.extent(data, (d) => d.y))
+      .nice()
+      .range([height - margin.bottom - adjmargin, margin.top]);
+
+    // creating xAxis
     const xAxis = (g) =>
       g
         .attr('transform', `translate(0,${height - margin.bottom})`)
@@ -43,12 +51,7 @@ export default function ScatterChartD3({ data }) {
             .text(data.x),
         );
 
-    const y = d3
-      .scaleLinear()
-      .domain(d3.extent(data, (d) => d.y))
-      .nice()
-      .range([height - margin.bottom - adjmargin, margin.top]);
-
+    // creating yAxis
     const yAxis = (g) =>
       g
         .attr('transform', `translate(${margin.left},0)`)
@@ -64,6 +67,7 @@ export default function ScatterChartD3({ data }) {
             .text(data.y),
         );
 
+    // creating grid
     const grid = (g) =>
       g
         .attr('stroke', 'currentColor')
@@ -91,6 +95,10 @@ export default function ScatterChartD3({ data }) {
             .attr('x2', width - margin.right),
         );
 
+    // base svg setting
+    const svg = d3.select(ref.current).attr('viewBox', [0, 0, width, height]);
+
+    // attaching main chart
     svg
       .select('.plot-area')
       .append('g')
@@ -104,10 +112,12 @@ export default function ScatterChartD3({ data }) {
       .attr('fill', (d) => color(d.category))
       .attr('d', (d) => shape(d.category));
 
+    // attaching Axis and grid
     svg.select('.x-axis').append('g').call(xAxis).style('font-size', '0.7rem');
     svg.select('.y-axis').append('g').call(yAxis).style('font-size', '0.7rem');
     svg.select('.grid').append('g').call(grid);
 
+    // legend setting
     const keys = ['setosa', 'versicolor', 'virginica'];
     const legendColor = d3.scaleOrdinal().domain(keys).range(d3.schemeCategory10);
     const legendShape = d3.scaleOrdinal(
@@ -116,22 +126,7 @@ export default function ScatterChartD3({ data }) {
     );
     const legendSize = 10;
 
-    // svg
-    //   .select('.legend')
-    //   .append('g')
-    //   .attr('stroke-width', 1.5)
-    //   .attr('font-family', 'sans-serif')
-    //   .attr('font-size', 10)
-    //   .selectAll('mydots')
-    //   .data(keys)
-    //   .join('rect')
-    //   .attr('x', (d, i) => 75 * i)
-    //   .attr('y', 105) // 100 is where the first dot appears. 25 is the distance between dots
-    //   .attr('width', legendSize)
-    //   .attr('height', legendSize)
-    //   .attr('transform', (d) => `translate(550, -100)`)
-    //   .style('fill', (d) => legendColor(d));
-
+    // attaching legend symbol
     svg
       .select('.legend')
       .append('path')
@@ -153,6 +148,7 @@ export default function ScatterChartD3({ data }) {
       .attr('d', legendShape('virginica'))
       .style('fill', legendColor('virginica'));
 
+    // attaching legend text
     svg
       .select('.legend')
       .append('g')
