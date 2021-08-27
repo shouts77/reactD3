@@ -166,7 +166,7 @@ export default function ScatterChartD3({ data }) {
       .attr('text-anchor', 'left')
       .attr('transform', (d) => `translate(550, -100)`)
       .style('alignment-baseline', 'middle');
-  });
+  }, [data]);
 
   return (
     <>

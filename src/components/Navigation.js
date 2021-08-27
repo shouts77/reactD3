@@ -212,6 +212,14 @@ export default function Navigation() {
                   <ListItemText primary="Bar Chart" />
                 </Link>
               </ListItem>
+              <ListItem button className={classes.nested} onClick={listClick}>
+                <ListItemIcon>
+                  <Equalizer />
+                </ListItemIcon>
+                <Link to="/forcechart" component={RouterLink}>
+                  <ListItemText primary="ForceChart" />
+                </Link>
+              </ListItem>
             </List>
           </Collapse>
         </List>

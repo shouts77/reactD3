@@ -71,7 +71,7 @@ export default function BarChartD3({ data }) {
     // attaching Axis
     svg.select('.x-axis').append('g').call(xAxis).style('font-size', '0.4rem');
     svg.select('.y-axis').append('g').call(yAxis).style('font-size', '0.4rem');
-  });
+  }, [data]);
   return (
     <>
       <svg
