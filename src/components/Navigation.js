@@ -160,7 +160,7 @@ export default function Navigation() {
               <ListItemText primary="Home" />
             </Link>
           </ListItem>
-          <ListItem button onClick={projectHandleClick}>
+          {/* <ListItem button onClick={projectHandleClick}>
             <ListItemIcon>
               <AccountTree />
             </ListItemIcon>
@@ -186,7 +186,7 @@ export default function Navigation() {
                 </Link>
               </ListItem>
             </List>
-          </Collapse>
+          </Collapse> */}
           <ListItem button onClick={practiceHandleClick}>
             <ListItemIcon>
               <AccountTree />
