@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
-import RandomDotsD3 from './chart/RandomDotsD3';
+import CircleWaveD3 from './chart/CircleWaveD3';
 
 function Home() {
   return (
@@ -19,8 +19,18 @@ function Home() {
           </Typography>
         </div>
         <div>
-          <RandomDotsD3 />
+          <CircleWaveD3 />
         </div>
+        <p>
+          Credit:{' '}
+          <a
+            href="https://bl.ocks.org/mbostock/2d466ec3417722e3568cd83fc35338e3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Circle Wave by Mike Bostock
+          </a>
+        </p>
       </Container>
     </div>
   );

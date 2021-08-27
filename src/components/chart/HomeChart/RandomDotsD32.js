@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-export default function RandomDotsD3() {
+export default function RandomDotsD32() {
   const ref = useRef();
 
   useEffect(() => {
@@ -9,7 +9,7 @@ export default function RandomDotsD3() {
     const width = 1600;
     const height = 900;
     const adjmargin = 0;
-    const n = 0;
+    const n = 100;
 
     const randInt = function (min, max) {
       if (max === undefined) {
@@ -19,19 +19,26 @@ export default function RandomDotsD3() {
       return (Math.random() * (max - min) + min) | 0;
     };
 
-    // const opacityValue = async function() {
-    //     while (true) {
-    //         await delay(1000);
-    //         yield Math.random();
-    //       }
-    // };
+    const opacityValue = async function* () {
+      while (true) {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        yield Math.random();
+      }
+    };
 
-    const opacityValue = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const num = Math.random();
-        resolve(num);
-      }, 1000);
-    });
+    // async function* generateSequence() {
+    //   while (true) {
+    //     await new Promise((resolve) => setTimeout(resolve, 1000));
+    //     yield Math.random();
+    //   }
+    // }
+
+    (async () => {
+      let generator = opacityValue();
+      for await (let value of generator) {
+        console.log(value); // 1, 2, 3, 4, 5
+      }
+    })();
 
     const color = d3.scaleOrdinal(
       [0, n],
@@ -61,9 +68,6 @@ export default function RandomDotsD3() {
       let newNumber2 = randInt(900);
       dataset.push([newNumber1, newNumber2]);
     }
-
-    console.log(randInt(1600));
-    console.log(dataset);
 
     // x value scaling
     const x = d3
@@ -112,7 +116,7 @@ export default function RandomDotsD3() {
       .attr('cy', (d) => y(d[1]))
       .attr('r', (d) => r(d[1]))
       .style('fill', (d, i) => color(i))
-      .style('opacity', opacityValue);
+      .style('opacity', 1);
   });
 
   return (
