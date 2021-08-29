@@ -220,6 +220,14 @@ export default function Navigation() {
                   <ListItemText primary="ForceChart" />
                 </Link>
               </ListItem>
+              <ListItem button className={classes.nested} onClick={listClick}>
+                <ListItemIcon>
+                  <Equalizer />
+                </ListItemIcon>
+                <Link to="/forcedirectedtree" component={RouterLink}>
+                  <ListItemText primary="ForceDirectedTree" />
+                </Link>
+              </ListItem>
             </List>
           </Collapse>
         </List>

@@ -7,6 +7,7 @@ import Home from './components/Home';
 import ScatterChart from './components/chart/ScatterChart/ScatterChart';
 import BarChart from './components/chart/BarChart/BarChart';
 import ForceChart from './components/chart/ForceChart/ForceChart';
+import ForceDirectedTree from './components/chart/ForceDirectedTree/ForceDirectedTree';
 
 const font = "'Noto Sans KR', sans-serif";
 const theme = createTheme({
@@ -27,6 +28,7 @@ function App() {
         <Route path="/scatterchart" component={ScatterChart} />
         <Route path="/barchart" component={BarChart} />
         <Route path="/forcechart" component={ForceChart} />
+        <Route path="/forcedirectedtree" component={ForceDirectedTree} />
       </Router>
     </ThemeProvider>
   );
