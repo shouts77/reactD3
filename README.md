@@ -14,4 +14,7 @@ This is data visualization portfolio App.
 
 ## Contact
 
-![twitter](https://img.shields.io/badge/twitter-blue?style=flat-square&logo=twitter&logoColor=white&link=https://twitter.com/shouts77)&nbsp;![Gmail](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=shouts98@gmail.com)
+[![twitter](https://img.shields.io/badge/twitter-blue?style=flat-square&logo=twitter&logoColor=white)][twitter]
+
+[//]: # "These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax"
+[twitter]: https://twitter.com/shouts77
