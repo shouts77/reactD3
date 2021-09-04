@@ -8,6 +8,7 @@ import ScatterChart from './components/chart/ScatterChart/ScatterChart';
 import BarChart from './components/chart/BarChart/BarChart';
 import ForceChart from './components/chart/ForceChart/ForceChart';
 import ForceDirectedTree from './components/chart/ForceDirectedTree/ForceDirectedTree';
+import RainbowPack from './components/chart/RainbowPack/RainbowPack';
 
 const font = "'Noto Sans KR', sans-serif";
 const theme = createTheme({
@@ -29,6 +30,7 @@ function App() {
         <Route path="/barchart" component={BarChart} />
         <Route path="/forcechart" component={ForceChart} />
         <Route path="/forcedirectedtree" component={ForceDirectedTree} />
+        <Route path="/rainbowpack" component={RainbowPack} />
       </Router>
     </ThemeProvider>
   );

@@ -26,7 +26,20 @@ function ForceChart() {
         </div>
         <Divider variant="fullWidth" />
         <div style={{ paddingTop: 20, paddingBottom: 20 }}>
-          <Typography paragraph>D3.js Force Chart 연습</Typography>
+          <Typography paragraph>
+            D3.js Force Chart 연습 &nbsp;
+            <em>
+              {' '}
+              [Credit:{' '}
+              <a
+                href="https://observablehq.com/@d3/force-directed-graph"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Force-Directed Graph by Mike Bostock]
+              </a>
+            </em>
+          </Typography>
         </div>
         <div>
           {loading && <div>loading</div>}

@@ -33,7 +33,20 @@ function BarChart() {
         </div>
         <Divider variant="fullWidth" />
         <div style={{ paddingTop: 20, paddingBottom: 20 }}>
-          <Typography paragraph>D3.js Bar Chart 연습</Typography>
+          <Typography paragraph>
+            D3.js Bar Chart 연습 &nbsp;
+            <em>
+              {' '}
+              [Credit:{' '}
+              <a
+                href="https://observablehq.com/@d3/bar-chart"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Bar Chart by Mike Bostock]
+              </a>
+            </em>
+          </Typography>
         </div>
         <div>
           {loading && <div>loading</div>}

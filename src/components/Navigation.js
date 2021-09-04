@@ -228,6 +228,14 @@ export default function Navigation() {
                   <ListItemText primary="ForceDirectedTree" />
                 </Link>
               </ListItem>
+              <ListItem button className={classes.nested} onClick={listClick}>
+                <ListItemIcon>
+                  <Equalizer />
+                </ListItemIcon>
+                <Link to="/rainbowpack" component={RouterLink}>
+                  <ListItemText primary="RainbowPack" />
+                </Link>
+              </ListItem>
             </List>
           </Collapse>
         </List>

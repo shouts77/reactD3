@@ -92,8 +92,8 @@ export default function ForceChartD3({ data }) {
         ref={ref}
         style={{
           height: '100%',
-          marginRight: '0px',
-          marginLeft: '0px',
+          marginRight: '10px',
+          marginLeft: '10px',
         }}
       >
         <g className="plot-area" />

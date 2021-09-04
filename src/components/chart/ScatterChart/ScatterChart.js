@@ -30,7 +30,20 @@ function ScatterChart() {
         </div>
         <Divider variant="fullWidth" />
         <div style={{ paddingTop: 20, paddingBottom: 20 }}>
-          <Typography paragraph>D3.js Scatter Chart 연습</Typography>
+          <Typography paragraph>
+            D3.js Scatter Chart 연습 &nbsp;
+            <em>
+              {' '}
+              [Credit:{' '}
+              <a
+                href="https://observablehq.com/@d3/scatterplot-with-shapes"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scatterplot with Shapes by Mike Bostock]
+              </a>
+            </em>
+          </Typography>
         </div>
         <div>
           {loading && <div>loading</div>}

@@ -3,9 +3,9 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
-import ForceDirectedTreeD3 from './ForceDirectedTreeD3';
+import RainbowPackD3 from './RainbowPackD3';
 
-function ForceDirectedTree() {
+function RainbowPack() {
   //   const [data, setData] = React.useState([]);
   //   const [loading, setLoading] = React.useState(true);
 
@@ -21,22 +21,22 @@ function ForceDirectedTree() {
     <div>
       <Container maxWidth="lg">
         <div>
-          <Typography variant="h4">Force-Directed Tree</Typography>
+          <Typography variant="h4">Rainbow Pack</Typography>
           <br />
         </div>
         <Divider variant="fullWidth" />
         <div style={{ paddingTop: 20, paddingBottom: 20 }}>
           <Typography paragraph>
-            D3.js Force Chart 연습 - Force-Directed Tree &nbsp;
+            D3.js Rainbow Pack 연습 &nbsp;
             <em>
               {' '}
               [Credit:{' '}
               <a
-                href="https://bl.ocks.org/mbostock/95aa92e2f4e8345aaa55a4a94d41ce37"
+                href="https://bl.ocks.org/mbostock/b07f8ae91c5e9e45719c"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Force-Directed Tree by Mike Bostock]
+                Rainbow Pack by Mike Bostock]
               </a>
             </em>
           </Typography>
@@ -44,11 +44,11 @@ function ForceDirectedTree() {
         <div>
           {/* {loading && <div>loading</div>}
           {!loading && <ForceDirectedTreeD3 data={data} />} */}
-          <ForceDirectedTreeD3 />
+          <RainbowPackD3 />
         </div>
       </Container>
     </div>
   );
 }
 
-export default ForceDirectedTree;
+export default RainbowPack;
