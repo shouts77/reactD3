@@ -25,7 +25,8 @@ export default function PachinkoSimD3() {
       .select('.x-axis')
       .append('g')
       .attr('transform', `translate(0,${height - margin.bottom - adjmargin})`)
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(x))
+      .style('font-size', '0.4rem');
 
     // dodger function
     function dodger(radius) {
