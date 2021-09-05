@@ -9,6 +9,7 @@ import BarChart from './components/chart/BarChart/BarChart';
 import ForceChart from './components/chart/ForceChart/ForceChart';
 import ForceDirectedTree from './components/chart/ForceDirectedTree/ForceDirectedTree';
 import RainbowPack from './components/chart/RainbowPack/RainbowPack';
+import PachinkoSim from './components/chart/PachinkoSim/PachinkoSim';
 
 const font = "'Noto Sans KR', sans-serif";
 const theme = createTheme({
@@ -31,6 +32,7 @@ function App() {
         <Route path="/forcechart" component={ForceChart} />
         <Route path="/forcedirectedtree" component={ForceDirectedTree} />
         <Route path="/rainbowpack" component={RainbowPack} />
+        <Route path="/pachinkosim" component={PachinkoSim} />
       </Router>
     </ThemeProvider>
   );

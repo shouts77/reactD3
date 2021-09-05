@@ -236,6 +236,14 @@ export default function Navigation() {
                   <ListItemText primary="RainbowPack" />
                 </Link>
               </ListItem>
+              <ListItem button className={classes.nested} onClick={listClick}>
+                <ListItemIcon>
+                  <Equalizer />
+                </ListItemIcon>
+                <Link to="/pachinkosim" component={RouterLink}>
+                  <ListItemText primary="PachinkoSimulator" />
+                </Link>
+              </ListItem>
             </List>
           </Collapse>
         </List>
