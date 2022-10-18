@@ -5,6 +5,8 @@ export default function PachinkoSimD3() {
   const ref = useRef();
 
   useEffect(() => {
+    
+    function* gen() {
     //base setting
     const width = 300;
     const height = 300;
@@ -70,6 +72,8 @@ export default function PachinkoSimD3() {
         .duration(750)
         // .ease(d3.easeBounce)
         .attr('cy', cy);
+    }
+      yield svg.node()
     }
   }, []);
 
